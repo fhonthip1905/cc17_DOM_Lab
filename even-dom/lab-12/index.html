@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Lab:12</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #root {
+      width: 300px;
+      margin: auto;
+      padding-top: 20px;
+    }
+    input[type="text"] {
+      width: 70%;
+      padding: 10px;
+      margin-right: 5px;
+    }
+    button {
+      padding: 10px;
+    }
+    li {
+      margin-top: 10px;
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      list-style: none;
+    }
+    button.edit,
+    button.delete {
+      margin-left: 10px;
+    }
+  </style>
+
+  <body>
+    <div id="root">
+      <button onclick="addTask()">Add</button>
+      <ul id="tasks-list"></ul>
+    </div>
+
+    <script>
+      function addTask() {
+        let tasksList = document.getElementById("tasks-list");
+        let newTaskInput = document.getElementById("new-task");
+
+        let li = document.createElement("li");
+        li.textContent = "Task list";
+
+        console.log(li);
+        let editButton = document.createElement("button");
+        editButton.textContent = "Edit";
+        editButton.className = "edit";
+        editButton.onclick = function () {
+          let newTask = prompt("Edit your task", li.textContent);
+          if (newTask) li.textContent = newTask;
+          li.appendChild(editButton);
+          li.appendChild(deleteButton);
+        };
+
+        let deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.className = "delete";
+        deleteButton.onclick = function () {
+          tasksList.removeChild(li);
+        };
+
+        li.appendChild(editButton);
+        li.appendChild(deleteButton);
+        tasksList.appendChild(li);
+      }
+    </script>
+  </body>
+</html>

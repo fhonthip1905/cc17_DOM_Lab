@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Lab:8</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+    button {
+      background-color: pink;
+      font-size: 20px;
+      font-weight: 600;
+      border: none;
+    }
+  </style>
+  <body>
+    <!-- จงสร้าง Button มีข้อความว่า “Hide”
+    เมื่อผู้ใช้ click button ให้ซ่อนข้อความและเปลี่ยนข้อความบน Button เป็น “Show” 
+    เมื่อ click button อีกครั้งให้แสดงข้อความและเปลี่ยนข้อความบน Button เป็น Hide -->
+
+    <button>Hide</button>
+    <div id="text"></div>
+
+    <script>
+      const button = document.querySelector("button");
+      const text = document.getElementById("text");
+
+      button.addEventListener("click", function () {
+        button.textContent === "Hide"
+          ? (button.textContent = "Show")
+          : (text.textContent = " Lorem ipsum dolor sit amet.");
+      });
+    </script>
+  </body>
+</html>

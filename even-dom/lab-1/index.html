@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Lab:1</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+    button {
+      padding: 20px;
+      width: 150px;
+      background-color: pink;
+      border-radius: 16px;
+      font-size: 20px;
+    }
+  </style>
+  <body>
+    <button>Click lab-1</button>
+
+    <script>
+      const button = document.querySelector("button");
+      button.addEventListener("click", () => alert("1")); // (1) Work
+      button.removeEventListener("click", () => alert("1")); // (2)
+      button.onclick = () => alert(2); // (3)  Work
+    </script>
+  </body>
+</html>

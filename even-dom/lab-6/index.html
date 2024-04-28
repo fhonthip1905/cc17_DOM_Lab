@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Lab:6</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+  </style>
+  <body>
+    <!-- จงสร้าง Button มีข้อความว่า “Click to hide me”
+เมื่อผู้ใช้ click button ให้ซ่อน button -->
+
+    <button>Click to hide me</button>
+
+    <script>
+      const button = document.querySelector("button");
+      button.addEventListener("click", function () {
+        // button.style.display = "none"; //element gone
+        button.style.visibility = "hidden"; //still had element
+      });
+    </script>
+  </body>
+</html>

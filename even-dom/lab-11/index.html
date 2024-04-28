@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Lab:11</title>
+</head>
+<style>
+     body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+    button {
+      padding: 10px;
+      width: 100px;
+      background-color: pink;
+      border-radius: 16px;
+      font-size: 20px;
+    }
+  </style>
+</style>
+<body>
+    <!-- จงสร้าง Counter มี button การทำงานและตัวเลขดังรูป
+เมื่อผู้ใช้ click + ให้เพิ่มค่าตัวเลขขึ้น 1
+เมื่อผู้ใช้ click - ให้ลดค่าตัวเลขลง 1
+เมื่อผู้ใช้ click Reset ให้ reset ค่าตัวเลขเป็น 0
+ตัวเลขห้ามติดลบ -->
+
+    <button id="decrement">-</button>
+    <span> 0 </span>
+    <button id="increment">+</button>
+    <button style="background-color: yellow;" id="reset-btn">Reset</button>
+
+    <script>
+        // เข้าถึงแหล่งข้อมูลเป้าหมาย
+      const decreamentBtn = document.getElementById("decrement");
+      const increamentBtn = document.getElementById("increment");
+      const reset = document.getElementById('reset-btn')
+      const count = document.querySelector("span");
+      // เมื่อ click แล้วต้องการให้ + 1
+      increamentBtn.addEventListener("click", function () {
+        const currentCount = +count.textContent; // get value from tag span and convert to Number(+)
+        const newCount = currentCount + 1; //
+        count.textContent = newCount;
+      });
+
+    // เมื่อ click แล้วต้องการให้ - 1
+      decreamentBtn.addEventListener("click", function () {
+        const currentCount = +count.textContent; // get value from tag span and convert to Number(+)
+        if (currentCount > 0){
+            const newCount = currentCount - 1; //-=
+            count.textContent = newCount;
+        }
+   
+      });
+
+      // click btn-reset will be reset data to be 0
+      reset.addEventListener('click',function(){
+        count.textContent = '0';
+      })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M-lab-2</title>
+  </head>
+  <body>
+    <!-- จงสร้าง <ul>
+        เขียนคำสั่ง prompt เพื่อรับข้อความ
+        นำข้อความที่ได้มาสร้าง <li> และ เพิ่มเข้าไปใน <ul>
+        เพิ่มไปเรื่อยๆจนกว่าผู้ใช้จะกด Cancel หรือ พิมพ์ข้อความว่าง -->
+
+    <!-- สร้าง <ul> -->
+
+    <script>
+      const ul = document.createElement('ul');
+      while (1) {
+        text = prompt("Enter your content");
+        if (text === null || text.trim() === '') break;
+        const li = document.createElement('li');
+        li.textContent = text;
+        ul.append(li);
+      }
+      document.body.prepend(ul);
+    </script>
+  </body>
+</html>

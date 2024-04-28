@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Lab:3</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+    button {
+      padding: 20px;
+      width: 150px;
+      background-color: pink;
+      border-radius: 16px;
+      font-size: 20px;
+    }
+  </style>
+  <body>
+    <!-- จงสร้าง Form ที่มี Button สำหรับ submit form 
+        และเขียนคำสั่งเพื่อยกเลิกการส่ง request ไปที่ server 
+        เมื่อผู้ใช้งานกด submit form 
+    -->
+    <form action="https://mui.com/material-ui/getting-started/templates/blog/">
+      <button type="button">Go to MUI</button>
+    </form>
+
+    <script>
+      const form = document.querySelector("form");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+      });
+    </script>
+  </body>
+</html>

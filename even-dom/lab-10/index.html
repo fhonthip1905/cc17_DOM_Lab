@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Lab:10</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+  
+  </style>
+  <body>
+    <!-- จงสร้าง Label และ Select ดังรูป
+เมื่อ click <select> ของ Province ให้แสดงรายชื่อจังหวัด
+เมื่อ click <select> ของ District ให้แสดงอำเภอของจังหวัดที่ถูกเลือก -->
+
+    <label for="">Province :</label>
+    <select name="_province" id="province">
+      <option value="">select</option>
+      <option value="chiangrai">Chiang Rai</option>
+      <option value="chiangmai">Chiang Mai</option>
+      <option value="lamphun">Lam Phun</option>
+    </select>
+    <label for="">District :</label>
+    <select name="" id="district">
+      <option value="">select</option>
+    </select>
+
+    <script>
+      //get to element
+      //create funtion inside build if and use loop for  item of arr
+
+      const provice = document.getElementById("province");
+      const district = document.getElementById("district");
+
+      provice.addEventListener("change", function () {
+        district.textContent = "select";
+        let pValue = provice.value;
+        if (pValue === "chiangrai") {
+          let dtCr = ["cr1", "cr2", "cr3"];
+          for (let item of dtCr) {
+            const add = document.createElement("option");
+            add.innerText = item;
+            district.append(add);
+          }
+        } else if (pValue === "chiangmai") {
+          district.textContent = "select";
+          let dtCm = ["cm1", "cm2", "cm3"];
+          for (let item of dtCm) {
+            const add = document.createElement("option");
+            add.innerText = item;
+            district.append(add);
+          }
+        } else if (pValue === "lamphun") {
+          district.textContent = "select";
+          let dtlp = ["lp1", "lp2", "lp3"];
+          for (let item of dtlp) {
+            const add = document.createElement("option");
+            add.innerText = item;
+            district.append(add); 
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

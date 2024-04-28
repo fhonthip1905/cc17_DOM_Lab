@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lab-3</title>
+  </head>
+  <body>
+    <!-- จงเขียนคำสั่งเพื่อ access <li> ตัวที่สาม โดยใช้วิธีต่อไปนี้
+        querySelector
+        querySelectorAll
+        getElementById
+        getElementsByTagName -->
+        
+    <div>
+      <h2 class="title-1">List of companies</h2>
+      <ul>
+        <li id="1">Google</li>
+        <li class="active" id="2">Yahoo</li>
+        <li id="3">Tencent</li>
+      </ul>
+    </div>
+
+    <script>
+        const _list1 = document.querySelector('#\\33'); //  \\3 == escape (nothing)
+        console.log(_list1)
+        const _list2 = document.querySelectorAll('li')[2];
+        console.log(_list2)
+        const _list3 = document.getElementById('3');
+        console.log(_list3)
+        const _list4 = document.getElementsByTagName('li')[2];
+        console.log(_list4)
+    </script>
+
+  </body>
+</html>

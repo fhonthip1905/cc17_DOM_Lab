@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M-lab-1</title>
+  </head>
+  <body>
+    <!-- จงเขียนคำสั่งเพื่อ Alert ค่าที่อยู่ใน <li> ทุกตัว -->
+
+    <ul>
+      <li>Cows</li>
+      <li>Donkeys</li>
+      <li>Dogs</li>
+      <li>Tigers</li>
+    </ul>
+
+    <script>
+      const li = document.querySelectorAll("li");
+      li.forEach((element) => {
+        alert(element.textContent);
+      });
+    </script>
+  </body>
+</html>

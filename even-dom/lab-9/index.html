@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Lab:9</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+    #txtAlert {
+      color: red;
+    }
+  </style>
+  <body>
+    <!-- จงสร้าง Input และ Button ดังรูปเมื่อผู้ใช้กรอกเบอร์โทรและกด Check
+ถ้าผู้ใช้ไม่กรอกให้ขึ้นข้อความ Phone Number is required
+ถ้าผู้ใช้กรอกค่าที่ไม่ใช่ตัวเลขให้ขึ้นข้อความ Phone Number is invalid
+ถ้าผู้ใช้กรอกค่าที่มีความยาวไม่เท่ากับ 10 ให้ขึ้นข้อความ Invalid length
+ถ้ากรอกถูกต้องให้ Alert “Your number is valid” -->
+
+    <input type="text" placeholder="Phone Number" value="" />
+    <button name="hello">Check</button>
+    <br />
+    <div id="txtAlert"></div>
+
+    <script>
+      const button = document.querySelector("button");
+      const txtAlert = document.getElementById("txtAlert");
+      const input = document.querySelector("input");
+      let value = "";
+
+      function newInput(input) {
+        value = input.target.value;
+        console.log(input.target.value);
+      }
+      input.addEventListener("input", newInput);
+      function validation(event) {
+        // console.log(event.target.name);
+        if (value === "") {
+          txtAlert.textContent = "Phone Number is required";
+        } else if (isNaN(value)) {
+          txtAlert.textContent = "Phone Number is invalid";
+        } else if (value.length !== 10) {
+          txtAlert.textContent = "Invalid length";
+        } else alert("Your number is valid");
+      }
+      button.addEventListener("click", validation);
+    </script>
+  </body>
+</html>
